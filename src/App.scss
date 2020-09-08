@@ -1,0 +1,219 @@
+@import 'tachyons';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+//colors
+$white: #ffffff;
+$black: #000000;
+$lightYellow: #fdca84;
+$darkYellow: #ffbe65;
+$darkGrey: #555555;
+
+//Additional variables
+$soft: 0.4s ease-in-out;
+$hard: 0.1s ease-in-out;
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+.mainTitle {
+  font-family: 'Bebas Neue';
+  font-size: 28vw;
+  text-shadow: 0px 64px 10px rgba(0, 0, 0, 0.06);
+  color: $darkGrey;
+  margin: 0 auto 0 auto;
+}
+
+.subTitle {
+  font-family: 'Bebas Neue';
+  font-size: 5.2vw;
+  color: $darkGrey;
+}
+
+.outlined-text {
+  font-family: 'Bebas Neue';
+  font-size: 5.2vw;
+  color: transparent;
+  -webkit-text-stroke: $darkGrey;
+  -webkit-text-stroke-width: thin;
+  .period {
+    color: $darkGrey;
+  }
+}
+
+.title-container {
+  margin: 3em 0 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: $hard;
+  font-family: 'Bebas Neue';
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.headerBar {
+  padding: 32px 32px 0 32px;
+}
+
+.name-logo {
+  span {
+    a {
+      font-family: 'Bebas Neue';
+      text-decoration: none;
+      font-size: 20px;
+      color: $darkGrey;
+      transition: $hard;
+      &:hover {
+        color: $darkYellow;
+      }
+    }
+  }
+}
+
+.Menu {
+  opacity: 0;
+  animation: 0.5s drop-in forwards;
+  z-index: 10;
+  .menu-container {
+    background-color: $white;
+    background-image: url('./images/dark-ribbon.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    .menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 4em 0 0 0;
+      li {
+        margin: 0.3em 0 0.3em 5em;
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: 0.3s fade-left forwards;
+        &:nth-of-type(1) {
+          animation-delay: 0.2s;
+        }
+        &:nth-of-type(2) {
+          animation-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+          animation-delay: 0.4s;
+        }
+        &:nth-of-type(4) {
+          animation-delay: 0.5s;
+        }
+        a {
+          font-family: 'Bebas Neue';
+          font-size: 7.5em;
+          text-shadow: 0px 34px 7px rgba(0, 0, 0, 0.06);
+          color: $darkYellow;
+          text-decoration: none;
+          transition: $soft;
+          &:hover {
+            text-shadow: none;
+            color: $darkGrey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Home {
+  .Hero {
+    background-color: $white;
+    height: 100%;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $lightYellow;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      clip-path: polygon(100% 0, 61% 0, 100% 55%);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      clip-path: polygon(100% 5%, 100% 38%, 0 100%, 0 68%);
+      background: $darkYellow;
+      height: 150vh;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+}
+
+//animations
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+//Media Queries
+
+@media (max-width: 60em) {
+}
+
+@media (max-width: 30em) {
+  .outlined-text,
+  .subTitle {
+    font-size: 10vw;
+  }
+  .Menu {
+    .menu-container {
+            display: flex;
+            justfy-content: center;
+      .menu-list {
+              margin: auto;
+        li {
+          margin: 0.3em 0 0.3em 2em;
+          a {
+            font-size: 26vw;
+          }
+        }
+      }
+    }
+  }
+}
