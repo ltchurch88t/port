@@ -1,5 +1,5 @@
-@import "tachyons";
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import 'tachyons';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 //colors
 $white: #ffffff;
@@ -13,202 +13,307 @@ $soft: 0.4s ease-in-out;
 $hard: 0.1s ease-in-out;
 
 .App {
-        text-align: center;
+  text-align: center;
+}
+
+.ma-auto {
+  margin: auto;
 }
 
 h1 {
-        margin: 0;
+  margin: 0;
 }
 
 h2 {
-        margin: 0;
+  margin: 0;
 }
 
 h3 {
-        margin: 0;
+  margin: 0;
+}
+
+.mainBtn {
+  background: $darkYellow;
+  font-family: 'Bebas Neue';
+  font-size: 1.3em;
+  text-decoration: none;
+  color: $white;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  position: relative;
+  padding: 12px 72px;
+  display: flex;
+  justify-content: center;
+  .behind {
+    position: absolute;
+    background: $lightYellow;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .btnContent {
+    background: $darkYellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  &:hover {
+    .behind {
+      transform: translateX(10px) translateY(10px);
+    }
+  }
 }
 
 .mainTitle {
-        font-family: "Bebas Neue";
-        font-size: 28vw;
-        color: $darkGrey;
-        margin: 0 auto 0 auto;
-        opacity: 0;
-        animation: 2s expand-title forwards;
+  font-family: 'Bebas Neue';
+  font-size: 28vw;
+  color: $darkGrey;
+  margin: 0 auto 0 auto;
+  opacity: 0;
+  animation: 2s expand-title forwards;
 }
 
 .subTitle {
-        font-family: "Bebas Neue";
-        font-size: 5.2vw;
-        color: $darkGrey;
+  font-family: 'Bebas Neue';
+  font-size: 5.2vw;
+  color: $darkGrey;
 }
 
 .outlined-text {
-        font-family: "Bebas Neue";
-        font-size: 5.2vw;
-        color: transparent;
-        -webkit-text-stroke: $darkGrey;
-        -webkit-text-stroke-width: thin;
-        .period {
-                color: $darkGrey;
-        }
+  font-family: 'Bebas Neue';
+  font-size: 5.2vw;
+  color: transparent;
+  -webkit-text-stroke: $darkGrey;
+  -webkit-text-stroke-width: thin;
+  .period {
+    color: $darkGrey;
+  }
 }
 
 .title-container {
-        margin: 3em 0 0 0;
-        position: relative;
-        z-index: 1;
+  margin: 3em 0 0 0;
+  position: relative;
+  z-index: 1;
 }
 
 .menu-toggle {
-        background: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-size: 20px;
-        transition: $hard;
-        font-family: "Bebas Neue";
-        &:hover {
-                text-decoration: underline;
-        }
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: $hard;
+  font-family: 'Bebas Neue';
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .headerBar {
-        padding: 32px 32px 0 32px;
+  padding: 32px 32px 0 32px;
 }
 
 .name-logo {
-        span {
-                a {
-                        font-family: "Bebas Neue";
-                        text-decoration: none;
-                        font-size: 20px;
-                        color: $darkGrey;
-                        transition: $hard;
-                        &:hover {
-                                color: $darkYellow;
-                        }
-                }
-        }
+  span {
+    a {
+      font-family: 'Bebas Neue';
+      text-decoration: none;
+      font-size: 20px;
+      color: $darkGrey;
+      transition: $hard;
+      &:hover {
+        color: $darkYellow;
+      }
+    }
+  }
 }
 
 .Menu {
+  opacity: 0;
+  animation: 0.5s drop-in forwards;
+  z-index: 10;
+  .menu-container {
+    background-color: $white;
+    background-image: url('./images/dark-ribbon.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    .menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 4em 0 0 0;
+      li {
+        margin: 0.3em 0 0.3em 5em;
         opacity: 0;
-        animation: 0.5s drop-in forwards;
-        z-index: 10;
-        .menu-container {
-                background-color: $white;
-                background-image: url("./images/dark-ribbon.svg");
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: right top;
-                .menu-list {
-                        list-style: none;
-                        padding: 0;
-                        margin: 4em 0 0 0;
-                        li {
-                                margin: 0.3em 0 0.3em 5em;
-                                opacity: 0;
-                                transform: translateX(-50px);
-                                animation: 0.3s fade-left forwards;
-                                &:nth-of-type(1) {
-                                        animation-delay: 0.2s;
-                                }
-                                &:nth-of-type(2) {
-                                        animation-delay: 0.3s;
-                                }
-                                &:nth-of-type(3) {
-                                        animation-delay: 0.4s;
-                                }
-                                &:nth-of-type(4) {
-                                        animation-delay: 0.5s;
-                                }
-                                a {
-                                        font-family: "Bebas Neue";
-                                        font-size: 7.5em;
-                                        text-shadow: 0px 34px 7px
-                                                rgba(0, 0, 0, 0.06);
-                                        color: $darkYellow;
-                                        text-decoration: none;
-                                        transition: $soft;
-                                        &:hover {
-                                                text-shadow: none;
-                                                color: $darkGrey;
-                                        }
-                                }
-                        }
-                }
+        transform: translateX(-50px);
+        animation: 0.3s fade-left forwards;
+        &:nth-of-type(1) {
+          animation-delay: 0.2s;
         }
+        &:nth-of-type(2) {
+          animation-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+          animation-delay: 0.4s;
+        }
+        &:nth-of-type(4) {
+          animation-delay: 0.5s;
+        }
+        a {
+          font-family: 'Bebas Neue';
+          font-size: 7.5em;
+          text-shadow: 0px 34px 7px rgba(0, 0, 0, 0.06);
+          color: $darkYellow;
+          text-decoration: none;
+          transition: $soft;
+          &:hover {
+            text-shadow: none;
+            color: $darkGrey;
+          }
+        }
+      }
+    }
+  }
 }
 
 .Home {
-        .Hero {
-                background-color: $white;
-                height: 100%;
-                width: 100%;
-                &::before {
-                        content: "";
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        background: $lightYellow;
-                        height: 100%;
-                        width: 100%;
-                        z-index: 0;
-                        clip-path: polygon(100% 0, 61% 0, 100% 55%);
-                }
-                &::after {
-                        content: "";
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        clip-path: polygon(100% 5%, 100% 38%, 0 100%, 0 68%);
-                        background: $darkYellow;
-                        height: 150vh;
-                        width: 100%;
-                        z-index: 0;
-                }
+  .Hero {
+    background-color: $white;
+    height: 100%;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $lightYellow;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      clip-path: polygon(100% 0, 61% 0, 100% 55%);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      clip-path: polygon(100% 5%, 100% 38%, 0 100%, 0 68%);
+      background: $darkYellow;
+      height: 150vh;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+}
+
+.Work {
+  .work-title {
+    transform: rotate(90deg);
+    font-family: 'Bebas Neue';
+    font-size: 10em;
+    color: $darkGrey;
+    left: -0.6em;
+    margin: 0;
+    text-shadow: 34px 0px 6px rgba(0, 0, 0, 0.1);
+  }
+  .second-column-work {
+    transform: translateY(64px);
+  }
+
+  .work-card {
+    min-height: 350px;
+    position: relative;
+    z-index: 1;
+    transition: $soft;
+    .bg-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background: $darkYellow;
+      z-index: 0;
+      transition: $soft;
+    }
+    .card-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $darkGrey;
+      height: 100%;
+      width: 100%;
+      transition: $soft;
+      overflow: hidden;
+      .view-project {
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(1em);
+        width: 100%;
+        text-align: center;
+        color: $white;
+        font-family: 'Bebas Neue';
+        font-size: 3em;
+        transition: $soft;
+      }
+    }
+    &:hover {
+      .bg-box {
+        transform: translateX(10px) translateY(10px);
+      }
+      .card-content {
+        .view-project {
+          opacity: 1;
+          transform: translateY(0em);
+          text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
         }
+      }
+    }
+  }
 }
 
 //animations
 
 @keyframes drop-in {
-        from {
-                opacity: 0;
-        }
-        to {
-                opacity: 1;
-        }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-left {
-        from {
-                transform: translateX(-50px);
-                opacity: 0;
-        }
-        to {
-                transform: translateX(0);
-                opacity: 1;
-        }
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes expand-title {
-        0% {
-                opacity: 0;
-                text-shadow: none;
-                transform: translateY(35px);
-        }
-        70% {
-                opacity: 1;
-                text-shadow: none;
-                transform: translateY(35px);
-        }
-        100% {
-                opacity: 1;
-                transform: translateY(0px);
-                text-shadow: 0px 64px 10px rgba(0, 0, 0, 0.06);
-        }
+  0% {
+    opacity: 0;
+    text-shadow: none;
+    transform: translateY(35px);
+  }
+  70% {
+    opacity: 1;
+    text-shadow: none;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    text-shadow: 0px 64px 10px rgba(0, 0, 0, 0.06);
+  }
 }
 
 //Media Queries
@@ -217,23 +322,32 @@ h3 {
 }
 
 @media (max-width: 30em) {
-        .outlined-text,
-        .subTitle {
-                font-size: 10vw;
+  .outlined-text,
+  .subTitle {
+    font-size: 10vw;
+  }
+  .Menu {
+    .menu-container {
+      display: flex;
+      justfy-content: center;
+      .menu-list {
+        margin: auto;
+        li {
+          margin: 0.3em 0 0.3em 2em;
+          a {
+            font-size: 26vw;
+          }
         }
-        .Menu {
-                .menu-container {
-                        display: flex;
-                        justfy-content: center;
-                        .menu-list {
-                                margin: auto;
-                                li {
-                                        margin: 0.3em 0 0.3em 2em;
-                                        a {
-                                                font-size: 26vw;
-                                        }
-                                }
-                        }
-                }
-        }
+      }
+    }
+  }
+
+  .Home {
+  }
+
+  .Work {
+    .work-title {
+      font-size: 5em;
+    }
+  }
 }
