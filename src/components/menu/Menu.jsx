@@ -1,7 +1,7 @@
 import React, {useLayoutEffect} from 'react';
 import {Link} from 'react-router-dom';
 
-const Menu = () => {
+const Menu = ({hideMenu}) => {
   // Hook
   function useLockBodyScroll() {
     useLayoutEffect(() => {
@@ -20,7 +20,9 @@ const Menu = () => {
     <div className="h-100 w-100 menu-container">
       <ul className="menu-list">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            Home
+          </Link>
         </li>
         <li>
           <Link to="/work">Work</Link>

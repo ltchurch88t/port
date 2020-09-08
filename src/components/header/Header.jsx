@@ -3,8 +3,7 @@ import Menu from '../menu/Menu';
 import {Link} from 'react-router-dom';
 
 const Header = props => {
-  const [menu, setMenu] = useState(false);
-
+const [menu, setMenu] = useState(props.openMenu);
   return (
     <div className="w-100 headerBar flex absolute top-0 left-0">
       <div className="w-100 z-9999 flex justify-between">
