@@ -3,7 +3,7 @@ import WorkCard from '../work/WorkCard';
 
 const WorkSection = props => {
   return (
-    <div className="relative flex flex-wrap justify-center mt7 w-100 h-100">
+    <div className="relative flex flex-wrap justify-center w-100 h-100">
       <h1 className="work-title tl mr-auto absolute left-0 top-0">WORK</h1>
       <div className="ml-auto mr-auto w-80 flex flex-wrap justify-evenly">
         <div className="w-40-l ma-auto w-80 flex flex-column justify-evenly">

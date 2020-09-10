@@ -1,7 +1,9 @@
 import React from 'react';
 import Hero from '../components/hero/Hero';
-import WorkSection from '../components/work/Work';
 import Header from '../components/header/Header';
+import WorkSection from '../components/work/Work';
+import AboutSection from '../components/about/AboutSection';
+import Footer from '../components/footer/Footer';
 
 const Home = props => {
   return (
@@ -10,11 +12,13 @@ const Home = props => {
       <section className="Hero">
         <Hero />
       </section>
-      <section className="Work w-100">
+      <section className="Work mt7 w-100">
         <WorkSection />
       </section>
-              <section className="pa5">
-                      </section>
+      <section className="pa5">
+        <AboutSection />
+      </section>
+      <Footer />
     </div>
   );
 };
